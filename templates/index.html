@@ -1,0 +1,23 @@
+{{ template "header" .}}
+    <div class="container mt-5">
+      <form method="POST" action="/" class="form-inline">
+        <label>Task</label>
+        <input type="text" name="title" value="" class="form-control ml-2" />
+        <input type="submit" value="登録" class="btn btn-primary inline ml-2" />
+      </form>
+
+      <br />
+
+      <ul class="list-group">
+        {{ range .todos }}
+        <li class="list-group-item">
+          <form method="POST" action="/delete/{{.ID}}">
+            {{ .Title }} <a href="/{{.ID}}" class="btn btn-success ml-2">編集</a>
+            <input type="submit" value="削除" class="btn btn-danger ml-2" />
+          </form>
+        </li>
+        {{end}}
+      </ul>
+  </div>
+  </body>
+</html>

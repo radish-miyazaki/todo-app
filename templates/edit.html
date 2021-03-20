@@ -1,0 +1,9 @@
+{{ template "header" .}}
+    <div class="container mt-5">
+      <form action="/update/{{.todo.ID}}" method="POST" class="form-inline">
+        <input type="text" name="title" value="{{.todo.Title}}" class="form-control ml-2" /><br />
+        <input type="submit" value="更新" class="btn btn-warning ml-2" />
+      </form>
+    </div>
+  </body>
+</html>
